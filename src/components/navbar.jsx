@@ -15,9 +15,9 @@ export default function Navbar() {
 
   return (
     <div
-      className={`w-full flex fixed top-0 py-[1rem]  px-[4rem] z-30 transition-colors duration-300 ${isScrolled ? 'bg-black text-[#eb3500] ' : 'text-[white]  bg-transparent'}`}>
+      className={`w-full flex fixed top-0 py-[1rem]  px-[4rem] z-30 transition-colors duration-300 ${isScrolled ? 'bg-[#000000ec] text-[#eb3500] ' : 'text-[white]  bg-transparent'}`}>
       <img className="w-[20%]" src={logo} alt="Logo" />
-      <div className='w-full flex justify-end items-center font-bold text-[1.3rem] gap-5'>
+      <div className='w-full flex justify-end items-center font-semibold text-[1.3rem] gap-5'>
         <a href="">Inicio</a>
         <a href="">Nosotros</a>
         <a href="">Nuestros Servicios</a>

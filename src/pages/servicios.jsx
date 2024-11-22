@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import services from '../images/familia.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-
+import background from '../images/servicios_background.png'
 import mosquiteros from '../images/mosquiteros.png';
 import corredizos from '../images/corredizos.png';
 
@@ -23,113 +23,72 @@ export default function Servicios() {
     setModalImage(null);
   };
 
-  return (
-    <div className='w-full h-auto bg-[#ECECEC] flex flex-col'>
-      <div className='w-full h-[40vh] bg-cover relative' style={{ backgroundImage: `url(${services})` }}>
-        <div className='bg-[#0000004b] w-full h-[40vh] flex justify-center items-center'>
-          <p className='text-[3rem] font-semibold text-[white]'>Nuestros servicios</p>
-        </div>
-      </div>
-      <div className='flex pt-[2rem]'>
-        <div className='w-[50%] h-full flex justify-center items-center'>
-          <div className='flex flex-col items-center gap-4 px-[4rem]'>
-            <p className='text-[#EB3500] font-bold text-[1.3rem]'>Mosquiteros</p>
-            <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full '>
-              {mosquiterosImages.map((image, index) => (
-                <img
-                  key={index}
-                  className='w-full h-[40vh]'
-                  src={image}
-                  alt={`mosquiteros-${index}`}
-                  onClick={() => openModal(image)}
-                />
-              ))}
-            </Carousel>
-          </div>
-        </div>
-        <div className='w-[50%] h-full flex justify-center items-center'>
-          <div className='flex flex-col items-center gap-4 px-[4rem]'>
-            <p className='text-[#EB3500] font-bold text-[1.3rem]'>Corredizos</p>
-            <Carousel showArrows showStatus={false} infiniteLoop showThumbs={false} className='w-full '>
-              {corredizosImages.map((image, index) => (
-                <button className='w-full' onClick={() => openModal(image)}><img key={index} className='w-full h-[40vh]' src={image} alt={`corredizos-${index}`} /></button>
-              ))}
-            </Carousel>
-          </div>
-        </div>
-      </div>
-      <div className='flex pt-[2rem]'>
-        <div className='w-[50%] h-full flex justify-center items-center'>
-          <div className='flex flex-col items-center gap-4 px-[4rem]'>
-            <p className='text-[#EB3500] font-bold text-[1.3rem]'>Mosquiteros</p>
-            <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full '>
-              {mosquiterosImages.map((image, index) => (
-                <img
-                  key={index}
-                  className='w-full h-[40vh]'
-                  src={image}
-                  alt={`mosquiteros-${index}`}
-                  onClick={() => openModal(image)}
-                />
-              ))}
-            </Carousel>
-          </div>
-        </div>
-        <div className='w-[50%] h-full flex justify-center items-center'>
-          <div className='flex flex-col items-center gap-4 px-[4rem]'>
-            <p className='text-[#EB3500] font-bold text-[1.3rem]'>Corredizos</p>
-            <Carousel showArrows showStatus={false} infiniteLoop showThumbs={false} className='w-full '>
-              {corredizosImages.map((image, index) => (
-                <button className='w-full' onClick={() => openModal(image)}><img key={index} className='w-full h-[40vh]' src={image} alt={`corredizos-${index}`} /></button>
-              ))}
-            </Carousel>
-          </div>
-        </div>
-      </div>
-      <div className='flex pt-[2rem]'>
-        <div className='w-[50%] h-full flex justify-center items-center'>
-          <div className='flex flex-col items-center gap-4 px-[4rem]'>
-            <p className='text-[#EB3500] font-bold text-[1.3rem]'>Mosquiteros</p>
-            <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full '>
-              {mosquiterosImages.map((image, index) => (
-                <img
-                  key={index}
-                  className='w-full h-[40vh]'
-                  src={image}
-                  alt={`mosquiteros-${index}`}
-                  onClick={() => openModal(image)}
-                />
-              ))}
-            </Carousel>
-          </div>
-        </div>
-        <div className='w-[50%] h-full flex justify-center items-center'>
-          <div className='flex flex-col items-center gap-4 px-[4rem]'>
-            <p className='text-[#EB3500] font-bold text-[1.3rem]'>Corredizos</p>
-            <Carousel showArrows showStatus={false} infiniteLoop showThumbs={false} className='w-full '>
-              {corredizosImages.map((image, index) => (
-                <button className='w-full' onClick={() => openModal(image)}><img key={index} className='w-full h-[40vh]' src={image} alt={`corredizos-${index}`} /></button>
-              ))}
-            </Carousel>
-          </div>
-        </div>
-      </div>
-      {/* Modal de imagen */}
-      {isModalOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center" onClick={closeModal}>
-          <div className="relative">
-            <img className="max-w-[90vw] max-h-[90vh] object-contain" src={modalImage} alt="Modal Image" />
-            <button
-              className="absolute top-0 right-0 p-1 text-[#000000ab] bg-[white] text-3xl"
-              onClick={closeModal}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
-</svg>
-            </button>
-          </div>
-        </div>
-      )}
+return (
+<div className='w-full h-auto flex flex-col py-[2rem] bg-cover bg-no-repeat ' style={{ backgroundImage: `url(${background})` }} >
+  <div className='w-full flex flex-col items-center h-auto pb-[2rem] text-white'>
+    <p className='font-sans text-[3.5rem] font-bold'>Nuestros servicios</p>
+    <p>- Algunos de nuestros trabajos realizados -</p>
     </div>
+    <div className='w-full flex flex-wrap'>
+  {/* Carrusel 1 */}
+  <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 1</p>
+    <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
+      {mosquiterosImages.map((image, index) => (
+        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-1-${index}`} onClick={() => openModal(image)} />
+      ))}
+    </Carousel>
+  </div>
+
+  {/* Carrusel 2 */}
+  <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 2</p>
+    <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
+      {mosquiterosImages.map((image, index) => (
+        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-2-${index}`} onClick={() => openModal(image)} />
+      ))}
+    </Carousel>
+  </div>
+
+  {/* Carrusel 3 */}
+  <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 3</p>
+    <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
+      {mosquiterosImages.map((image, index) => (
+        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-3-${index}`} onClick={() => openModal(image)} />
+      ))}
+    </Carousel>
+  </div>
+
+  {/* Carrusel 4 */}
+  <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 4</p>
+    <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
+      {mosquiterosImages.map((image, index) => (
+        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-4-${index}`} onClick={() => openModal(image)} />
+      ))}
+    </Carousel>
+  </div>
+
+  {/* Carrusel 5 */}
+  <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 5</p>
+    <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
+      {mosquiterosImages.map((image, index) => (
+        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-5-${index}`} onClick={() => openModal(image)} />
+      ))}
+    </Carousel>
+  </div>
+  {/* Carrusel 6 */}
+  <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 5</p>
+    <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
+      {mosquiterosImages.map((image, index) => (
+        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-5-${index}`} onClick={() => openModal(image)} />
+      ))}
+    </Carousel>
+  </div>
+</div>
+</div>
   );
 }
