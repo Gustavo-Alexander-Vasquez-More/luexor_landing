@@ -43,7 +43,7 @@ document.body.style.overflow = 'auto'
 async function enviar(){
 try {
 if(!nombre || !correo || !mensaje){
-alert('Complete los campos para enviar su consulta.')
+alert('Por favor, complete todos los campos del formulario para enviar su consulta.')
 }else{
   const encodedMessage = encodeURIComponent(`${mensaje}\n\nDatos del cliente:\nNombre: ${nombre}\nCorreo electrónico: ${correo}`);
   
@@ -54,30 +54,7 @@ alert('Complete los campos para enviar su consulta.')
   console.log(error);
 }
 }
-const navigateSobreNosotros=()=>{
-closeMenu()
-const scrollTop = window.innerHeight * 1.15; // 20% de la altura de la ventana
-  window.scrollTo({
-    top: scrollTop,
-    behavior: 'smooth' 
-  });
-}
-const navigateServicios=()=>{
-  closeMenu()
-  const scrollTop = window.innerHeight * 2.56; // 20% de la altura de la ventana
-    window.scrollTo({
-      top: scrollTop,
-      behavior: 'smooth' 
-    });
-  }
-  const navigateContacto=()=>{
-    closeMenu()
-    const scrollTop = window.innerHeight * 0.18; // 20% de la altura de la ventana
-      window.scrollTo({
-        top: scrollTop,
-        behavior: 'smooth' 
-      });
-    }
+
 
   return (
     <>
@@ -104,17 +81,17 @@ const navigateServicios=()=>{
           <div className="flex flex-col w-full">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Nombre completo</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Escriba su nombre"/>
+              <input ref={inputNombre} onChange={captureNombre} type="email" class="form-control" id="exampleFormControlInput1" placeholder="Escriba su nombre"/>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+              <input ref={inputCorreo} onChange={captureCorreo} type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escriba su consulta"></textarea>
+              <textarea ref={inputMensaje} onChange={captureMensaje} class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escriba su consulta"></textarea>
             </div>
-            <button className=" bg-[black] rounded-[5px] py-[0.5rem] font-semibold text-[white]">Enviar</button>
+            <button onClick={enviar} className=" bg-[black] rounded-[5px] py-[0.5rem] font-semibold text-[white]">Enviar</button>
           </div>
           </div>
         </div>

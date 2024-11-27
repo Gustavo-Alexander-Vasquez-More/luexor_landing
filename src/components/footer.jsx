@@ -10,12 +10,20 @@ export default function footer() {
       new window.bootstrap.Tooltip(tooltipTriggerEl);
     });
   }, []);
+  const navigateInicio=()=>{
+      
+    const scrollTop = window.innerHeight * 0; // 20% de la altura de la ventana
+      window.scrollTo({
+        top: scrollTop,
+        behavior: 'smooth' 
+      });
+    }
   return (
     <div className='w-full  bg-[black] text-white px-[1rem] lg:px-[4rem] flex flex-col gap-2'>
       <div className='flex lg:flex-row flex-col py-[2rem] items-center gap-3 justify-between'>
         <div className='flex items-center gap-5'>
         <div className='h-[20vh] flex gap-5'>
-          <img className="lg:w-full w-[50%]" src={logo} alt="" />
+          <button onClick={navigateInicio} className='w-[10rem]'><img className="lg:w-full w-[50%]" src={logo} alt="" /></button>
           <div className='w-[0.2rem] h-full bg-white'></div>
         </div>
         <div className='flex flex-col items-start gap-2'>
@@ -48,16 +56,16 @@ export default function footer() {
 </svg>
 </p>
             <div className='flex gap-3 '>
-              <a className='' href="" data-bs-toggle="tooltip" data-bs-title="Instagram"><img className='w-[2rem]' src={insta} alt="" /></a>
-              <a href="" data-bs-toggle="tooltip" data-bs-title="Facebook"><img className='w-[2rem]' src={face} alt="" /></a>
-              <a href="" data-bs-toggle="tooltip" data-bs-title="Youtube"><img className='w-[2rem]' src={you} alt="" /></a>
+              <a target='_blank' href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Faberturas.luxor%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR0ELVizjSg-N6bZtr9mmuwCn1HtgF5eM5cDGPqMD8n8O-y0CKpzeA9T8Iw_aem_c43rXMD2UaSRxURxrz0sug&h=AT0CNC9FBH_zdbhq31QL9Ee1BZL10tEeA8mVswE8Tp_nzRWo4-AEOvb8vVHfzqKCgI0tWmTCGNrZqGrYfLz3ujFoTm05HTjydxrUPcCuztV2O-dn_Dy2FamLgB4DgUT3Ps6p9E5jsKoBMiJOUeKN"><img className='w-[2rem]' src={insta} alt="" /></a>
+              <a target='_blank' href='https://www.facebook.com/aberturas.luxor'><img className='w-[2rem]' src={face} alt="" /></a>
+              <a target='_blank' href='/'><img className='w-[2rem]' src={you} alt="" /></a>
             </div>
         </div>
         </div>
       </div>
       <div className='flex items-center flex-col  text-[white] text-[0.6rem] lg:text-[0.8rem]'>
         <p className='text-center'>© copyrigth Luxor Aberturas. Todos los derechos reservados</p>
-        <a target='_blank' href='https://www.linkedin.com/in/gassali/' className='underline'>Desarrollado por Saeta Design®</a>
+        <a target='_blank' href='https://www.facebook.com/profile.php?id=61569764181210' className='underline'>Desarrollado por Saeta Design®</a>
       </div>
     </div>
   );

@@ -3,27 +3,40 @@ import services from '../images/familia.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import background from '../images/servicios_background.png'
-import mosquiteros from '../images/mosquiteros.png';
-import corredizos from '../images/corredizos.png';
-
+import catalogo from '../../src/catalogo.js'
+import Modal_image from '../components/modal_image.jsx';
 export default function Servicios() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
+  console.log(modalImage);
 
-  const mosquiterosImages = [mosquiteros, mosquiteros, mosquiteros, mosquiteros, mosquiteros];
-  const corredizosImages = [corredizos, corredizos, corredizos, corredizos, corredizos];
+  const catalogoo=catalogo?.map(dat=>dat)
+  const persianas=catalogoo.filter(dat=>dat.tipo === 'persianas')
+  const puertas=catalogoo.filter(dat=>dat.tipo === 'puertas')
+  const mamparas=catalogoo.filter(dat=>dat.tipo === 'mamparas')
+  const ventanas=catalogoo.filter(dat=>dat.tipo === 'ventanas')
+  const roller=catalogoo.filter(dat=>dat.tipo === 'roller')
+  const mosquiteros=catalogoo.filter(dat=>dat.tipo === 'mosquiteros')
 
-  const openModal = (image) => {
-    setModalImage(image);
+  const openModal = (id) => {
+    setModalImage(id);
     setIsModalOpen(true);
+    // Bloquear el scroll
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setModalImage(null);
+    // Desbloquear el scroll
+    document.body.style.overflow = '';
   };
 
 return (
+<>
+{isModalOpen === true && (
+ <Modal_image id={modalImage} closeModal={closeModal}/>
+)}
 <div className='w-full h-auto flex flex-col py-[2rem] bg-cover bg-no-repeat ' style={{ backgroundImage: `url(${background})` }} >
   <div className='w-full flex flex-col items-center h-auto pb-[2rem] text-white'>
     <p className='font-sans text-[3.5rem] font-bold'>Nuestros servicios</p>
@@ -32,63 +45,76 @@ return (
     <div className='w-full flex flex-wrap'>
   {/* Carrusel 1 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 1</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Ventanas / Ventanales corredizos</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
-      {mosquiterosImages.map((image, index) => (
-        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-1-${index}`} onClick={() => openModal(image)} />
+      {ventanas.map((image, index) => (
+        <button  className='w-full' onClick={() => openModal(image.id)} >
+          <img key={index} className='w-full h-[40vh] object-cover' src={image.image} alt={`mosquiteros-5-${index}`}/>
+        </button>
       ))}
     </Carousel>
   </div>
 
   {/* Carrusel 2 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 2</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
-      {mosquiterosImages.map((image, index) => (
-        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-2-${index}`} onClick={() => openModal(image)} />
+      {mosquiteros.map((image, index) => (
+        <button  className='w-full' onClick={() => openModal(image.id)} >
+          <img key={index} className='w-full h-[40vh] object-cover' src={image.image} alt={`mosquiteros-5-${index}`}/>
+        </button>
       ))}
     </Carousel>
   </div>
 
   {/* Carrusel 3 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 3</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Puertas</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
-      {mosquiterosImages.map((image, index) => (
-        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-3-${index}`} onClick={() => openModal(image)} />
+      {puertas.map((image, index) => (
+        <button  className='w-full' onClick={() => openModal(image.id)} >
+          <img key={index} className='w-full h-[40vh] object-cover' src={image.image} alt={`mosquiteros-5-${index}`}/>
+        </button>
       ))}
     </Carousel>
   </div>
 
   {/* Carrusel 4 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 4</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Mamparas</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
-      {mosquiterosImages.map((image, index) => (
-        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-4-${index}`} onClick={() => openModal(image)} />
+      {mamparas.map((image, index) => (
+        <button  className='w-full' onClick={() => openModal(image.id)} >
+          <img key={index} className='w-full h-[40vh] object-cover' src={image.image} alt={`mosquiteros-5-${index}`}/>
+        </button>
       ))}
     </Carousel>
   </div>
 
   {/* Carrusel 5 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 5</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Persianas</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
-      {mosquiterosImages.map((image, index) => (
-        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-5-${index}`} onClick={() => openModal(image)} />
+      {persianas.map((image, index) => (
+        <button  className='w-full' onClick={() => openModal(image.id)} >
+          <img key={index} className='w-full h-[40vh] object-cover' src={image.image} alt={`mosquiteros-5-${index}`}/>
+        </button>
       ))}
     </Carousel>
   </div>
   {/* Carrusel 6 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros 5</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline'>Cortinas Roller</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
-      {mosquiterosImages.map((image, index) => (
-        <img key={index} className='w-full h-[40vh]' src={image} alt={`mosquiteros-5-${index}`} onClick={() => openModal(image)} />
+      {roller.map((image, index) => (
+        <button  className='w-full' onClick={() => openModal(image.id)} >
+          <img key={index} className='w-full h-[40vh] object-cover' src={image.image} alt={`mosquiteros-5-${index}`}/>
+        </button>
       ))}
     </Carousel>
   </div>
 </div>
 </div>
+</>
   );
 }
