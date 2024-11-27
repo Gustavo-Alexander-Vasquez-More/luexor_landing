@@ -108,7 +108,7 @@ return (
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
       {roller.map((image, index) => (
         <button  className='w-full' onClick={() => openModal(image.id)} >
-          <img key={index} className='w-full h-[40vh] object-cover' src={image.image} alt={`mosquiteros-5-${index}`}/>
+          <img key={index} className='w-full h-[40vh] object-cover' src={image.image} alt={`mosquiteros-5-${image.image}`}/>
         </button>
       ))}
     </Carousel>
