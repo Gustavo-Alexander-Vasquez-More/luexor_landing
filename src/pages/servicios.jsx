@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import background from '../images/servicios_background.png'
 import catalogo from '../../src/catalogo.js'
-import Modal_image from '../components/modal_image.jsx';
+import Modal_image from '../components/ligthbox.jsx';
 export default function Servicios() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
@@ -38,14 +38,14 @@ return (
  <Modal_image id={modalImage} closeModal={closeModal}/>
 )}
 <div className='w-full h-auto flex flex-col py-[2rem] bg-cover bg-no-repeat ' style={{ backgroundImage: `url(${background})` }} >
-  <div className='w-full flex flex-col items-center h-auto pb-[2rem] text-white'>
-    <p className='font-sans text-[3.5rem] font-bold'>Nuestros servicios</p>
-    <p>- Algunos de nuestros trabajos realizados -</p>
+  <div className='w-full flex flex-col px-[1rem] lg:px-[0rem] items-center h-auto pb-[2rem] text-white'>
+    <p className='font-sans text-[3rem] lg:text-[3.5rem] font-bold montserrat'>Nuestro Catálogo</p>
+    <p className='montserrat text-[0.8rem] lg:text-[1rem]'>Cotizá sin cargo seleccionando el modelo que quieras</p>
     </div>
     <div className='w-full flex flex-wrap'>
   {/* Carrusel 1 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Ventanas / Ventanales corredizos</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline montserrat'>Ventanas / Ventanales corredizos</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
       {ventanas.map((image, index) => (
         <button  className='w-full' onClick={() => openModal(image.id)} >
@@ -57,7 +57,7 @@ return (
 
   {/* Carrusel 2 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Mosquiteros</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline montserrat'>Mosquiteros</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
       {mosquiteros.map((image, index) => (
         <button  className='w-full' onClick={() => openModal(image.id)} >
@@ -69,7 +69,7 @@ return (
 
   {/* Carrusel 3 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Puertas</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline montserrat'>Puertas</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
       {puertas.map((image, index) => (
         <button  className='w-full' onClick={() => openModal(image.id)} >
@@ -81,7 +81,7 @@ return (
 
   {/* Carrusel 4 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Mamparas</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline montserrat'>Mamparas</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
       {mamparas.map((image, index) => (
         <button  className='w-full' onClick={() => openModal(image.id)} >
@@ -93,7 +93,7 @@ return (
 
   {/* Carrusel 5 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Persianas</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline montserrat'>Persianas</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
       {persianas.map((image, index) => (
         <button  className='w-full' onClick={() => openModal(image.id)} >
@@ -104,7 +104,7 @@ return (
   </div>
   {/* Carrusel 6 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline'>Cortinas Roller</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline montserrat'>Cortinas Roller</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
       {roller.map((image, index) => (
         <button  className='w-full' onClick={() => openModal(image.id)} >

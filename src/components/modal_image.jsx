@@ -85,7 +85,7 @@ const [mensaje, setMensaje]=useState()
                   onClick={openForm}
                   className="absolute bottom-12 left-1/2 transform -translate-x-1/2 bg-[#FF4E00] border-solid border-[2px] botder-[white] text-white py-2 px-6 rounded-md font-semibold z-50"
                 >
-                  Consultanos por este modelo
+                  Cotizá sin cargo este modelo
                 </button>
               )}
 

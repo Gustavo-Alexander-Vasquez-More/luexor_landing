@@ -54,12 +54,12 @@ export default function Navbar() {
           }
   return (
     <div
-      className={`w-full flex fixed top-0 py-[1rem]  px-[4rem] z-30 transition-colors duration-300 ${isScrolled ? 'bg-[#000000ec] text-[#eb3500] ' : 'text-[white]  bg-transparent'}`}>
+      className={`w-full hidden lg:flex fixed top-0 py-[1rem]  px-[4rem] z-30 transition-colors duration-300 ${isScrolled ? 'bg-[#000000ec] text-[#eb3500] ' : 'text-[white]  bg-transparent'}`}>
       <a className='w-[20%]' href="/"><img className="w-full" src={logo} alt="Logo" /></a>
-      <div className='w-full flex justify-end items-center font-semibold text-[1.3rem] gap-5'>
+      <div className='w-full flex justify-end items-center font-semibold  text-[1.2rem] gap-4 montserrat'>
       <button onClick={navigateInicio}>Inicio</button>
       <button onClick={navigateSobreNosotros}>Nosotros</button>
-      <button onClick={navigateServicios}>Nuestros Servicios</button>
+      <button onClick={navigateServicios}>Catálogo</button>
       <button onClick={navigateTestimonios}>Testimonios</button>
       <button onClick={navigateContacto}>Contacto</button>
       </div>
