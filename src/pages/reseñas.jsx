@@ -57,35 +57,63 @@ useEffect(() => {
   autoPlay 
   infinite={true}
 >
-  {reseñas_map.map(dat => (
-    <a target='_blank' href={dat.url_opinion} className='text-start'>
-        <div className="flex flex-col items-center gap-1 card h-[38vh] bg-[#E0D2A3] mx-3 py-[1rem] px-[1rem]">
-      <div className='flex w-full gap-2'>
-      <img src={dat.url} alt={dat.name} className="w-8 h-8 rounded-full object-cover" />
-        <div className='flex flex-col text-[0.7rem]'>
+  {reseñas_map.map((dat, index) => (
+    <a 
+      key={index} 
+      target='_blank' 
+      rel="noopener noreferrer" 
+      href={dat.url_opinion} 
+      className='text-start'
+    >
+      <div className="flex flex-col items-center gap-1 card bg-[#E0D2A3] mx-3 py-[1rem] px-[1rem]  overflow-hidden">
+        <div className='flex w-full gap-2'>
+          <img 
+            src={dat.url} 
+            alt={dat.name} 
+            className="w-8 h-8 rounded-full object-cover" 
+          />
+          <div className='flex flex-col text-[0.7rem]'>
             <p className='font-semibold text-[0.8rem] montserrat'>{dat.name}</p>
-            {dat.tipo === 'Local Guide' && (
-                <p className='montserrat'>{dat.tipo}</p>
+            {dat.tipo === 'Local Guide' && <p className='montserrat'>{dat.tipo}</p>}
+          </div>
+        </div>
+
+        <div className='flex w-full items-center gap-2'>
+          <div className='flex gap-1'>
+            {[...Array(5)].map((_, i) => (
+              <img 
+                key={i} 
+                className='w-[0.7rem] h-[0.7rem]' 
+                src={star} 
+                alt={`Star ${i + 1}`} 
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Texto truncado con enlace al final */}
+        <div className='w-full text-[0.7rem] flex flex-col lg:text-[0.75rem] gap-2 montserrat flex-1'>
+          <p className="line-clamp-3">
+            {dat.message}{' '}
+            {dat.message.length > 120 && (
+              <a 
+                href={dat.url_opinion} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-blue-500"
+              >
+                
+              </a>
             )}
+          </p>
+          <a href={dat.url_opinion} target='_blank' className='text-primary text-center font-semibold'>Leer más</a>
         </div>
       </div>
-      <div className='flex w-full items-center gap-2'>
-        
-        <div className='flex gap-1'>
-            <img className='w-[0.7rem] h-[0.7rem]' src={star} alt="" />
-            <img className='w-[0.7rem] h-[0.7rem]' src={star} alt="" />
-            <img className='w-[0.7rem] h-[0.7rem]' src={star} alt="" />
-            <img className='w-[0.7rem] h-[0.7rem]' src={star} alt="" />
-            <img className='w-[0.7rem] h-[0.7rem]' src={star} alt="" />
-        </div>
-      </div>
-      <div className='w-full flex text-[0.64rem] lg:text-[0.75rem] montserrat'>
-        <p>{dat.message}</p>
-      </div>
-    </div>
     </a>
   ))}
 </CarouselMulti>
+
+
         
     </div>
   );
