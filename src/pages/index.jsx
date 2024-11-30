@@ -80,7 +80,7 @@ alert('Por favor, complete todos los campos del formulario para enviar su consul
       <Navbar2/>
       <div className="w-full absolute  h-screen z-10"></div>
       <div className=" z-50 bottom-6 right-5 fixed lg:flex hidden">
-        <a href="" className="flex items-end gap-2 text-white ">
+        <a target="_blank" href="https://wa.link/oivbm8" className="flex items-end gap-2 text-white ">
           <p className="font-semibold  bg-[#6a6a6ad8] px-[1rem] py-[0.3rem] rounded-[5px]  montserrat">Chateá con nosotros</p>
           <svg class="w-20 h-20 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path fill="currentColor" fill-rule="evenodd" d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z" clip-rule="evenodd"/>
@@ -97,9 +97,9 @@ alert('Por favor, complete todos los campos del formulario para enviar su consul
     <button onClick={() => setShowForm(true)} className="px-[1rem] py-[0.5rem] border-[2px] border-white border-solid text-[1.1rem] lg:hidden flex font-semibold montserrat bg-[black] rounded-[5px]">Cotizá sin cargo</button>
   </div>
   <div className="lg:w-[50%] lg:flex hidden w-full h-screen  justify-center items-center">
-    <div className="bg-white rounded-[10px] px-[1.5rem] py-[1.5rem] w-[80%] lg:w-[50%]">
+    <div className="bg-white rounded-[10px] px-[1.5rem] z-20 py-[1.5rem] w-[80%] lg:w-[50%]">
 
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full ">
           <div class=" text-black montserrat font-semibold text-center text-[1.7rem]">
               <p>Cotizá sin cargo</p>
             </div>

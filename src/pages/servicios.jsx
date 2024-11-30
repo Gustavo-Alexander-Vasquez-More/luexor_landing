@@ -38,14 +38,14 @@ return (
  <Modal_image id={modalImage} closeModal={closeModal}/>
 )}
 <div className='w-full h-auto flex flex-col py-[2rem] bg-cover bg-no-repeat ' style={{ backgroundImage: `url(${background})` }} >
-  <div className='w-full flex flex-col px-[1rem] lg:px-[0rem] items-center h-auto pb-[2rem] text-white'>
-    <p className='font-sans text-[3rem] lg:text-[3.5rem] font-bold montserrat'>Nuestro Catálogo</p>
-    <p className='montserrat text-[0.8rem] lg:text-[1rem]'>Cotizá sin cargo seleccionando el modelo que quieras</p>
+  <div className='w-full flex flex-col px-[1rem] lg:px-[0rem] items-center h-auto pb-[2rem] lg:pb-[3rem] text-white'>
+    <p className='font-sans text-[3rem] lg:text-[3.5rem] text-center font-bold montserrat'>Catálogo</p>
+    
     </div>
     <div className='w-full flex flex-wrap'>
   {/* Carrusel 1 */}
   <div className='flex flex-col items-center gap-4 px-[1rem] lg:px-[4rem] lg:pb-[2rem] pb-[2rem] w-full lg:w-1/2'>
-    <p className='text-[white] font-bold text-[1.3rem] underline montserrat'>Ventanas / Ventanales corredizos</p>
+    <p className='text-[white] font-bold text-[1.3rem] underline montserrat'>Ventanas / Ventanales</p>
     <Carousel showArrows={true} showStatus={false} infiniteLoop showThumbs={false} className='w-full'>
       {ventanas.map((image, index) => (
         <button  className='w-full' onClick={() => openModal(image.id)} >

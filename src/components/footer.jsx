@@ -58,7 +58,7 @@ export default function footer() {
             <div className='flex gap-3 '>
               <a target='_blank' href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Faberturas.luxor%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR0ELVizjSg-N6bZtr9mmuwCn1HtgF5eM5cDGPqMD8n8O-y0CKpzeA9T8Iw_aem_c43rXMD2UaSRxURxrz0sug&h=AT0CNC9FBH_zdbhq31QL9Ee1BZL10tEeA8mVswE8Tp_nzRWo4-AEOvb8vVHfzqKCgI0tWmTCGNrZqGrYfLz3ujFoTm05HTjydxrUPcCuztV2O-dn_Dy2FamLgB4DgUT3Ps6p9E5jsKoBMiJOUeKN"><img className='w-[2rem]' src={insta} alt="" /></a>
               <a target='_blank' href='https://www.facebook.com/aberturas.luxor'><img className='w-[2rem]' src={face} alt="" /></a>
-              <a target='_blank' href='/'><img className='w-[2rem]' src={you} alt="" /></a>
+              
             </div>
         </div>
         </div>
